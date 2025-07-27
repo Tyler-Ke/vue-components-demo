@@ -1,8 +1,8 @@
 <template>
-   <div>{{ message }}</div>
-   <ContactUs></ContactUs>
-   <ButtonCounter></ButtonCounter>
-   <ButtonCounter></ButtonCounter>
+   <div class="container">
+      <div>{{ message }}</div>
+      <ContactUs></ContactUs>
+   </div>
 </template>
 
 <script setup>
