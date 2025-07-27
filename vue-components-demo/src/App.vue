@@ -1,12 +1,13 @@
 <template>
    <div>{{ message }}</div>
-   <contact-us></contact-us>
+   <ContactUs></ContactUs>
    <ButtonCounter></ButtonCounter>
    <ButtonCounter></ButtonCounter>
 </template>
 
 <script setup>
    import ButtonCounter from "./components/ButtonCounter.vue"
+   import ContactUs from "./components/ContactUs.vue"
    const message = "Hello Vue";
 </script>
 
