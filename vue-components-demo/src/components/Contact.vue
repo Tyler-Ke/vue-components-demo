@@ -10,5 +10,9 @@
 <script setup>
    import {ref, defineProps} from "vue";
    const email = ref("fakeemail2@gmail.com");
-   const props = defineProps(["name", "phone", "ownername"]);
+   const props = defineProps({
+      name: String,
+      phone: Number,
+      ownername: String,
+   })
 </script>
