@@ -3,16 +3,17 @@
       <h3>Name: {{ name }}</h3>
       <p>Email: {{ email }}</p>
       <p>Phone: {{ phone }}</p>
-      <p class="float-end small" v-if="ownername !== ''">This contact belongs to: {{ ownername }}</p>
+      <p class="float-end small" v-if="ownername !== ''">
+         This contact belongs to: {{ ownername }}
+      </p>
    </div>
 </template>
 
 <script setup>
-   import {ref, defineProps} from "vue";
-   const email = ref("fakeemail2@gmail.com");
-   const props = defineProps({
-      name: String,
-      phone: Number,
-      ownername: String,
-   })
+const props = defineProps({
+   name: { type: String, required: true },
+   phone: Number,
+   ownername: String,
+   email: { type: String, required: false, default: "-n/a-" },
+});
 </script>

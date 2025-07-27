@@ -1,11 +1,8 @@
 <template>
    <div class="container">
       <div>{{ message }}</div>
-      <Contact
-         name="Tyler"
-         :phone="123-123-1234"
-         :ownername="contactsOwner"
-      ></Contact>
+      <Contact name="Tyler" :phone="1231231234" :ownername="contactsOwner"></Contact>
+      <Contact name="Vincent" :phone="1231231235" :ownername="contactsOwner" email="vincentsemail@gmail.com"></Contact>
    </div>
 </template>
 
