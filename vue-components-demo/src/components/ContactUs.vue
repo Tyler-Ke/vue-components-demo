@@ -5,14 +5,7 @@
    </div>
 </template>
 
-<script>
-import {ref} from "vue";
-
-export default{
-   setup() {
-      const email = ref("fakeemail2@gmail.com")
-
-      return { email };
-   }
-}
+<script setup>
+   import {ref} from "vue";
+   const email = ref("fakeemail2@gmail.com")
 </script>
