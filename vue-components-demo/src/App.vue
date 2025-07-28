@@ -1,6 +1,7 @@
 <template>
    <div class="container">
       <div>{{ message }}</div>
+      Contact Owner Name: <input v-model="ownerName" />
       <div class="row">
          <div class="col-12" v-for="contact in contacts" :key="contact.name">
             <Contact
@@ -24,13 +25,13 @@ const contacts = reactive([
    {
       name: "Tyler",
       phone: 1231231234,
-      ownerName: ownerName.value,
+      ownerName: ownerName,
       isFavorite: false,
    },
    {
       name: "Vincent",
       phone: 5554448888,
-      ownerName: ownerName.value,
+      ownerName: ownerName,
       isFavorite: true,
    },
    {
