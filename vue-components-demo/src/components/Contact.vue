@@ -7,7 +7,7 @@
             <p>Phone: {{ phone }}</p>
          </div>
          <div class="col-3">
-            <button :class="[isFavorite ? 'btn btn-warning' : 'btn btn-success']">{{ isFavorite ? "Remove from" : "Add to" }} Favorite</button>
+            <button @click="toggleFavorite()":class="[isFavorite ? 'btn btn-warning' : 'btn btn-success']">{{ isFavorite ? "Remove from" : "Add to" }} Favorite</button>
          </div>
       </div>
       <span class="float-end small" v-if="ownername !== ''">
@@ -24,4 +24,10 @@ const props = defineProps({
    email: { type: String, required: false, default: "-n/a-" },
    isFavorite: Boolean
 });
+
+const emit = defineEmits(["update-favorite",])
+
+function toggleFavorite() {
+   emit("update-favorite");
+}
 </script>
