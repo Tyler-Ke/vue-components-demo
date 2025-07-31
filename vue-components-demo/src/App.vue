@@ -11,7 +11,7 @@
             </div>
          </div>
          <br /><br />
-         <AddContact @add-contact="onAddContact($event)"></AddContact>
+         <AddContact :onAddContact="onAddContact"></AddContact>
          <div class="row">
             <div class="col-12" v-for="contact in contacts" :key="contact.name">
                <Contact
