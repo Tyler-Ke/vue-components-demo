@@ -1,8 +1,14 @@
 <template>
-   <div class="bg-black text pt-3">
+   <div class="bg-black text pt-3" :style="{ height: '100vh' }">
+      <h1 class="text-center text-success">Contact Page</h1>
       <div class="container">
-         <div class="text-white float-end">
-            Contact Owner Name: <input v-model="ownerName" />
+         <div class="row text-white p-2 mb-2">
+            <div class="col-6">
+               Owner Name: <input v-model="ownerName" />
+            </div>
+            <div class="col-6 text-end">
+               Max Lucky Number: <input v-model="maxNumber"></input>
+            </div>
          </div>
          <br /><br />
          <AddContact @add-contact="onAddContact($event)"></AddContact>
@@ -14,8 +20,12 @@
                   :ownername="contact.ownerName"
                   :email="contact.email"
                   :isFavorite="contact.isFavorite"
+                  :maxLuckyNumber="maxNumber"
                   @update-favorite="
-                     contact.isFavorite = onUpdateFavorite($event, contact.phone)
+                     contact.isFavorite = onUpdateFavorite(
+                        $event,
+                        contact.phone
+                     )
                   "
                ></Contact>
             </div>
@@ -30,6 +40,7 @@ import Contact from "./components/Contact.vue";
 import AddContact from "./components/AddContact.vue";
 const message = "Hello Vue";
 const ownerName = ref("Alphabet Inc");
+const maxNumber = ref(100);
 const contacts = reactive([
    {
       name: "Tyler",

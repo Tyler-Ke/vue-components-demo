@@ -20,7 +20,7 @@
             </button>
          </div>
          <div class="col-4">
-            <LuckyNumber :maxNumber="100"></LuckyNumber>
+            <LuckyNumber :maxNumber="maxLuckyNumber"></LuckyNumber>
          </div>
       </div>
       <span class="float-end small" v-if="ownername !== ''">
@@ -37,6 +37,7 @@ const props = defineProps({
    ownername: String,
    email: { type: String, required: false, default: "-n/a-" },
    isFavorite: Boolean,
+   maxLuckyNumber: Number,
 });
 
 const emit = defineEmits(["update-favorite"]);
