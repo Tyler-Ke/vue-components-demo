@@ -20,7 +20,6 @@
                   :ownername="contact.ownerName"
                   :email="contact.email"
                   :isFavorite="contact.isFavorite"
-                  :maxLuckyNumber="maxNumber"
                   @update-favorite="
                      contact.isFavorite = onUpdateFavorite(
                         $event,
@@ -35,12 +34,12 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, ref, provide } from "vue";
 import Contact from "./components/Contact.vue";
 import AddContact from "./components/AddContact.vue";
-const message = "Hello Vue";
 const ownerName = ref("Alphabet Inc");
 const maxNumber = ref(100);
+provide("maxLuckyNumber", maxNumber);
 const contacts = reactive([
    {
       name: "Tyler",
