@@ -23,7 +23,9 @@
          </button>
          <br />
          <br />
-         <component :is="currentComponent"></component>
+         <keep-alive :include="['LuckyNumber', 'LuckyNumberV2']" exclude="">
+            <component :is="currentComponent"></component>
+         </keep-alive>
       </div>
    </div>
 </template>
