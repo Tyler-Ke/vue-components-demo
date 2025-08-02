@@ -10,6 +10,7 @@
             Toggle Component
          </button>
          <br />
+         <slot name="moreInfo"></slot>
          <button
             @click="newVersion = false"
             class="btn btn-primary text-black m-2"
@@ -23,6 +24,7 @@
             Lucky Number v2
          </button>
          <br />
+         <slot name="learnSlot"></slot>
          <br />
          <keep-alive :include="['LuckyNumber', 'LuckyNumberV2']" exclude="">
             <component :is="currentComponent" class="border"></component>
