@@ -2,18 +2,42 @@
    <div class="bg-black text pt-3" :style="{ height: '100vh' }">
       <h1 class="text-center text-success">Lucky Number Generator</h1>
       <div class="container">
-         <LuckyNumber></LuckyNumber>
+         <button
+            @click="newVersion = !newVersion"
+            class="btn btn-primary text-black m-2"
+         >
+            Toggle Component
+         </button>
          <br />
-         <LuckyNumberV2></LuckyNumberV2>
+         <button
+            @click="newVersion = false"
+            class="btn btn-primary text-black m-2"
+         >
+            Lucky Number v1
+         </button>
+         <button
+            @click="newVersion = true"
+            class="btn btn-primary text-black m-2"
+         >
+            Lucky Number v2
+         </button>
+         <br />
+         <br />
+         <component :is="currentComponent"></component>
       </div>
    </div>
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, ref, computed } from "vue";
 import LuckyNumber from "./components/LuckyNumber.vue";
 import LuckyNumberV2 from "./components/LuckyNumberV2.vue";
 
+const newVersion = ref(false);
+
+const currentComponent = computed(() => {
+   return newVersion.value ? LuckyNumberV2 : LuckyNumber;
+});
 </script>
 
 <style></style>
